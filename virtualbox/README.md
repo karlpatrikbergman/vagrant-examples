@@ -148,10 +148,26 @@ PING 10.100.198.101 (10.100.198.100) 56(84) bytes of data.
 64 bytes from 10.100.198.100: icmp_seq=2 ttl=64 time=0.381 ms
 ^C
 ```
-It works!   
-I followed the same procedure and created a vm with Ubuntu/Trusty64 and it worked fine. No need for
-restarting network service. I also added provisioning scripts that installs a webserver and verified
-that the default web page was reachable, both from the host and from one vm to the other.
+It works!
+
+## Add anohter guest running Ubunty/Trusty64
+I followed the same procedure and created a vm with Ubuntu/Trusty64. Running ifconfig produces the same output as
+before. 
+```shell
+$ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         10.210.72.1     0.0.0.0         UG    100    0        0 eth0
+se-dc01.infiner 10.210.72.1     255.255.255.255 UGH   100    0        0 eth0
+10.210.72.0     0.0.0.0         255.255.254.0   U     100    0        0 eth0
+loopback        gentoo-pabe2.in 255.0.0.0       UG    0      0        0 lo
+172.17.0.0      0.0.0.0         255.255.0.0     U     0      0        0 docker0
+192.168.122.0   0.0.0.0         255.255.255.0   U     0      0        0 virbr0
+10.100.198.0    0.0.0.0         255.255.255.0   U     0      0        0 vboxnet0
+```
+My understanding of this is that any messages in the the address space '10.100.198.0/24' will be routed directly to the 
+'vboxnet0' network interface (virtualbox), i.e messages to the guests (with ip:s and '10.100.198.101' and '10.100.198.101')
+will be routed to 'vboxnet0'.
 
 ***
 
