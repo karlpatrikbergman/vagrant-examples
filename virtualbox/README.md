@@ -126,7 +126,21 @@ lo:         inet  127.0.0.1/8               state UNKNOWN
 eth0:		inet 10.0.2.15/24               state UP  		
 eth1:		10.100.198.101/24               state UP
 ```
-To automate this, add a provisioning script with the commands above (bootstrap.sh).  
+To automate this, add a provisioning script with the commands above (bootstrap.sh).    
+
+The routing table for the guest now looks like this:  
+```shell
+$ vagrant ssh
+[vagrant@localhost ~]$
+ip route
+10.0.2.0/24     dev eth0  proto kernel  scope link  src 10.0.2.15       metric 100 
+10.100.198.0/24 dev eth1  proto kernel  scope link  src 10.100.198.100 
+169.254.0.0/16  dev eth1  scope link    metric 1003 
+```
+The guest ip adress '10.0.2.15' falls into the address space '10.0.2.0/24'. Any packages on the network bound for 
+'10.0.2.15' will be routed directly to the 'eth0' network interface.  
+ 
+  
   
 Try to ping the guest from the host:
 ```shell
