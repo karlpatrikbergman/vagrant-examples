@@ -11,15 +11,7 @@ eth0:		inet 10.210.72.239  	netmask 255.255.254.0
 lo:         inet 127.0.0.1  		netmask 255.0.0.0
 vibr0:		inet 192.168.122.1		netmask 255.255.255.0
 ``` 
-docker0  
-I have docker installed  
-
-libvirt  
-I have libvirt installed.  
-
-lo  
-The loopback device is a special, virtual network interface that your computer uses to communicate with itself. 
-It is used mainly for diagnostics and troubleshooting, and to connect to servers running on the local machine.  
+I have docker and libvirt installed, therefore the 'docker0' and 'vibr0' interfaces.  
 
 The routing table on my host looks like this:  
 ```shell
