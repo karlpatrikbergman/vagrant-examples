@@ -18,7 +18,7 @@ and virtual environments  sometimes use it to connect to the outside network.
 lo  
 The loopback device is a special, virtual network interface that your computer uses to communicate with itself. 
 It is used mainly for diagnostics and troubleshooting, and to connect to servers running on the local machine.  
-
+<span style="color:red">red</span>
 The routing table on my host looks like this:  
 ```shell
 $ route
