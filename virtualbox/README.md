@@ -177,6 +177,22 @@ My understanding of this is that any messages in the the address space '10.100.1
 'vboxnet0' network interface (virtualbox), i.e messages to the guests (with ip:s and '10.100.198.101' and '10.100.198.101')
 will be routed to 'vboxnet0'.
 
+Running 'ifconfig' on the Ubuntu guest gives the following (simplified) output:
+```shell
+lo:         inet  127.0.0.1/8
+eth0:		inet 10.0.2.15/24  		
+eth1:		10.100.198.101
+```
+The routing table on the Ubuntu guest looks like this:  
+```shell
+vagrant@vagrant-ubuntu-trusty-64:~$ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         10.0.2.2        0.0.0.0         UG    0      0        0 eth0
+10.0.2.0        *               255.255.255.0   U     0      0        0 eth0
+10.100.198.0    *               255.255.255.0   U     0      0        0 eth1
+```
+
 ***
 
 ## NFS
