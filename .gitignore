@@ -45,3 +45,4 @@ crashlytics-build.properties
 fabric.properties
 
 virtualbox/ubuntu-trusty64/.vagrant/
+virtualbox/centos7/.vagrant/
