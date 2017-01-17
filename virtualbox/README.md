@@ -193,6 +193,8 @@ default         10.0.2.2        0.0.0.0         UG    0      0        0 eth0
 10.100.198.0    *               255.255.255.0   U     0      0        0 eth1
 ```
 
+TODO: Explain how Virtualbox knows which guest to route to.
+
 ***
 
 ## NFS
