@@ -25,14 +25,14 @@ loopback        gentoo-pabe2.in 255.0.0.0       UG    0      0        0 lo
 172.17.0.0      0.0.0.0         255.255.0.0     U     0      0        0 docker0
 192.168.122.0   0.0.0.0         255.255.255.0   U     0      0        0 virbr0
 ```
-__Repeat routing table knowledge__  
+Repeat routing table knowledge  
 My host ip adress '10.210.72.239' falls into the address space '10.210.72.0/23'. Any packages on the network bound for 
 '10.210.72.0/23' will be routed directly to the 'eth0' network interface. Listed is also routing
 for address spaces to be used for docker and libvirt.  
 http://linux-ip.net/html/basic-reading.html  
 
-Bringing up the vm without touching Vagrant network configurations does not change output   
-of ifconfig on host (as expected). Notice this ouput during vm boot:
+Bringing up the vm without touching Vagrant network configurations does not change output of ifconfig on host 
+(as expected). Notice this ouput during vm boot:
 ```shell
 ==> default: Preparing network interfaces based on configuration...
     default: Adapter 1: nat
@@ -43,7 +43,7 @@ Enter guest and run iproute2 (output simplified):
 $ vagrant ssh
 [vagrant@localhost ~]$ ip addr show
 eth0:		inet 10.0.2.15/24                   state UP  		
-lo:             inet  127.0.0.1/8                   state UNKNOWN
+lo:         inet  127.0.0.1/8                   state UNKNOWN
 ```
 <sub><sup>/24 = 255.255.255.0 and /8 = 255.0.0.0</sup></sub>  
 
