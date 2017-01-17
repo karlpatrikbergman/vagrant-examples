@@ -122,7 +122,7 @@ sudo systemctl restart network.service
 Run iproute2 again:
 ```shell
 [vagrant@localhost ~]$ ip addr show
-lo:             inet  127.0.0.1/8               state UNKNOWN
+lo:         inet  127.0.0.1/8               state UNKNOWN
 eth0:		inet 10.0.2.15/24               state UP  		
 eth1:		10.100.198.101/24               state UP
 ```
