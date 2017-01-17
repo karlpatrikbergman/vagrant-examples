@@ -1,5 +1,5 @@
 # Vagrant example
-## Private network 
+## Run CentOS 7 guest without networking 
 To start with we skip Vagrant networking altogether to be able to see how network interfaces 
 are added/changed both on the host and on the guest. Create Vagrant file with default provider 
 Virtualbox and box CentOS 7. 
@@ -57,11 +57,12 @@ ip route
 The guest ip adress '10.0.2.15' falls into the address space '10.0.2.0/24'. Any packages on the network bound for 
 '10.0.2.15' will be routed directly to the 'eth0' network interface.  
  
+## Run CentOS 7 guest without networking
+ 
 Now we'll try the "private network" feature. To configure private network it is suggested to use an ip address from 
 reserved private address space:      
 https://www.vagrantup.com/docs/networking/private_network.html
  
-
 Destroy vm and configure "private network" in Vagrant file:
 ```ruby
 config.vm.network "private_network", ip: "10.100.198.200"
