@@ -11,7 +11,7 @@ eth0:		inet 10.210.72.239  	netmask 255.255.254.0
 lo:         inet 127.0.0.1  		netmask 255.0.0.0
 vibr0:		inet 192.168.122.1		netmask 255.255.255.0
 ``` 
-I have docker and libvirt installed, therefore the 'docker0' and 'vibr0' interfaces.  
+I have docker and libvirt installed, therefore the 'docker0' and 'vibr0' network interfaces.  
 
 The routing table on my host looks like this:  
 ```shell
@@ -25,7 +25,7 @@ loopback        gentoo-pabe2.in 255.0.0.0       UG    0      0        0 lo
 172.17.0.0      0.0.0.0         255.255.0.0     U     0      0        0 docker0
 192.168.122.0   0.0.0.0         255.255.255.0   U     0      0        0 virbr0
 ```
-Repeat routing table knowledge  
+### Repeat routing table knowledge ###  
 My host ip adress '10.210.72.239' falls into the address space '10.210.72.0/23'. Any packages on the network bound for 
 '10.210.72.0/23' will be routed directly to the 'eth0' network interface. Listed is also routing
 for address spaces to be used for docker and libvirt.  
