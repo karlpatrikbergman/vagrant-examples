@@ -79,9 +79,9 @@ Now the vm has two network adapters.
 Output of "ifconfig" on my host machine after vm with privat network has started:  
 ```shell
 docker0:	inet 172.17.0.1  		netmask 255.255.0.0
-eth0:		inet 10.210.72.239  	        netmask 255.255.254.0 
-lo:             inet 127.0.0.1  		netmask 255.0.0.0
-vboxnet0:       inet 10.100.198.1               netmask 255.255.255.0
+eth0:		inet 10.210.72.239  	netmask 255.255.254.0 
+lo:         inet 127.0.0.1  		netmask 255.0.0.0
+vboxnet0:   inet 10.100.198.1       netmask 255.255.255.0
 vibr0:		inet 192.168.122.1		netmask 255.255.255.0
 ```
 Enter guest, and run iproute2:  
