@@ -124,7 +124,7 @@ Run iproute2 again:
 [vagrant@localhost ~]$ ip addr show
 lo:         inet  127.0.0.1/8               state UNKNOWN
 eth0:		inet 10.0.2.15/24               state UP  		
-eth1:		10.100.198.101/24               state UP
+eth1:		10.100.198.100/24               state UP
 ```
 To automate this, add a provisioning script with the commands above (bootstrap.sh).    
 
@@ -137,17 +137,15 @@ ip route
 10.100.198.0/24 dev eth1  proto kernel  scope link  src 10.100.198.100 
 169.254.0.0/16  dev eth1  scope link    metric 1003 
 ```
-The guest ip adress '10.0.2.15' falls into the address space '10.0.2.0/24'. Any packages on the network bound for 
-'10.0.2.15' will be routed directly to the 'eth0' network interface.  
+
+TODO: explain this.  
  
-  
-  
 Try to ping the guest from the host:
 ```shell
-$ ping 10.100.198.101
-PING 10.100.198.101 (10.100.198.101) 56(84) bytes of data.
-64 bytes from 10.100.198.101: icmp_seq=1 ttl=64 time=0.614 ms
-64 bytes from 10.100.198.101: icmp_seq=2 ttl=64 time=0.381 ms
+$ ping 10.100.198.100
+PING 10.100.198.101 (10.100.198.100) 56(84) bytes of data.
+64 bytes from 10.100.198.100: icmp_seq=1 ttl=64 time=0.614 ms
+64 bytes from 10.100.198.100: icmp_seq=2 ttl=64 time=0.381 ms
 ^C
 ```
 It works!   
