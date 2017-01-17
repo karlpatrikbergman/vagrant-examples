@@ -28,7 +28,8 @@ loopback        gentoo-pabe2.in 255.0.0.0       UG    0      0        0 lo
 Repeat routing table knowledge  
 My host ip adress '10.210.72.239' falls into the address space '10.210.72.0/23'. Any packages on the network bound for 
 '10.210.72.0/23' will be routed directly to the 'eth0' network interface. Listed is also routing
-for address spaces to be used for docker and libvirt. http://linux-ip.net/html/basic-reading.html  
+for address spaces to be used for docker and libvirt.  
+http://linux-ip.net/html/basic-reading.html  
 
 Bringing up the vm without touching Vagrant network configurations does not change output   
 of ifconfig on host (as expected). Notice this ouput during vm boot:
