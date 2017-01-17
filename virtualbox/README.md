@@ -25,7 +25,7 @@ loopback        gentoo-pabe2.in 255.0.0.0       UG    0      0        0 lo
 172.17.0.0      0.0.0.0         255.255.0.0     U     0      0        0 docker0
 192.168.122.0   0.0.0.0         255.255.255.0   U     0      0        0 virbr0
 ```
-Repeat routing table knowledge  
+Repeat routing table knowledge:  
 My host ip adress '10.210.72.239' falls into the address space '10.210.72.0/23'. Any packages on the network bound for 
 '10.210.72.0/23' will be routed directly to the 'eth0' network interface. Listed is also routing
 for address spaces to be used for docker and libvirt.  
@@ -47,6 +47,16 @@ lo:         inet  127.0.0.1/8                   state UNKNOWN
 ```
 <sub><sup>/24 = 255.255.255.0 and /8 = 255.0.0.0</sup></sub>  
 
+The routing table for the guest:  
+```shell
+$ vagrant ssh
+[vagrant@localhost ~]$
+ip route
+10.0.2.0/24 dev eth0  proto kernel  scope link  src 10.0.2.15  metric 100
+```
+The guest ip adress '10.0.2.15' falls into the address space '10.0.2.0/24'. Any packages on the network bound for 
+'10.0.2.15' will be routed directly to the 'eth0' network interface.  
+ 
 Now we'll try the "private network" feature. To configure private network it is suggested to use an ip address from 
 reserved private address space:      
 https://www.vagrantup.com/docs/networking/private_network.html
