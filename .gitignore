@@ -5,6 +5,7 @@
 
 # User-specific stuff:
 .idea/workspace.xml
+.idea
 .idea/tasks.xml
 
 # Sensitive or high-churn files:
@@ -43,3 +44,4 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+virtualbox/ubuntu-trusty64/.vagrant/

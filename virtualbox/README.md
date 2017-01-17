@@ -7,8 +7,8 @@ Virtualbox and box CentOS 7.
 Simplified output of "ifconfig" on my host machine before running any vm:
 ```shell
 docker0:	inet 172.17.0.1  		netmask 255.255.0.0
-eth0:		inet 10.210.72.239  	        netmask 255.255.254.0 
-lo:             inet 127.0.0.1  		netmask 255.0.0.0
+eth0:		inet 10.210.72.239  	netmask 255.255.254.0 
+lo:         inet 127.0.0.1  		netmask 255.0.0.0
 vibr0:		inet 192.168.122.1		netmask 255.255.255.0
 ``` 
 <sub><sup>libvirt<br>I have libvirt installed. Therefore the vibr0 network inferface in the list. The virbr0, or "Virtual Bridge 0" interface is used for NAT (Network 
