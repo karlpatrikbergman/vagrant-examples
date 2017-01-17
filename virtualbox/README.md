@@ -84,6 +84,22 @@ lo:         inet 127.0.0.1  		netmask 255.0.0.0
 vboxnet0:   inet 10.100.198.1       netmask 255.255.255.0
 vibr0:		inet 192.168.122.1		netmask 255.255.255.0
 ```
+
+The routing table on my host now looks like this:  
+```shell
+$ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         10.210.72.1     0.0.0.0         UG    100    0        0 eth0
+se-dc01.infiner 10.210.72.1     255.255.255.255 UGH   100    0        0 eth0
+10.210.72.0     0.0.0.0         255.255.254.0   U     100    0        0 eth0
+loopback        gentoo-pabe2.in 255.0.0.0       UG    0      0        0 lo
+172.17.0.0      0.0.0.0         255.255.0.0     U     0      0        0 docker0
+192.168.122.0   0.0.0.0         255.255.255.0   U     0      0        0 virbr0
+10.100.198.0    0.0.0.0         255.255.255.0   U     0      0        0 vboxnet0
+```
+Any packages on the network bound for '10.100.198.0/24' will be routed to the 'vboxnet0' network interface. 
+
 Enter guest, and run iproute2:  
 ```shell
 $ vagrant ssh
