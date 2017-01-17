@@ -112,7 +112,7 @@ eth1:		...                             state DOWN
 We know have another network interface on the guest machine *but it has state DOWN and no ip address*. After doing
 some research I found a bug related to CentOS 7 and Vagrant<1.8:  
 https://github.com/mitchellh/vagrant/issues/6235  
-I run Vagrant 1.9.1. Still the fix suggested solved the problem.  
+I run Vagrant 1.9.1 so the problem should not be there? Anyhow the fix suggested solved the problem.  
 
 Log on to the guest and run
 ```shell
