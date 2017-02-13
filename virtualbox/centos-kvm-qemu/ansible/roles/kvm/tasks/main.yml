@@ -1,0 +1,54 @@
+- name: Install kvm-gemu
+  yum:
+    name: qemu-kvm
+    state: present
+
+- name: Install libvirt
+  yum:
+    name: libvirt
+    state: present
+
+- name: Install virt-install
+  yum:
+    name: virt-install
+    state: present
+
+- name: Install bridge-utils
+  yum:
+    name: bridge-utils
+    state: present
+
+- name: Install bind-utils
+  yum:
+    name: bind-utils
+    state: present
+
+- name: Install virt-manager
+  yum:
+    name: virt-manager
+    state: present
+
+- name: Install wget
+  yum:
+    name: wget
+    state: present
+
+- name: Install net-tools
+  yum:
+    name: net-tools
+    state: present
+
+- name: Install virt-viewer
+  yum:
+    name: virt-viewer
+    state: present
+
+- name: Install virt-viewer
+  yum:
+    name: genisoimage
+    state: present
+
+- name: Install epel-release
+  yum:
+    name: epel-release
+    state: present

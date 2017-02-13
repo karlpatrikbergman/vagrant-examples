@@ -1,0 +1,5 @@
+[Artifactory]
+name=Artifactory
+baseurl=http://se-artif-prd.infinera.com/artifactory/centos7_x86_64/os/x86_64
+enabled=1
+gpgcheck=0
